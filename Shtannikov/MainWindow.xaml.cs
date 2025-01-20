@@ -26,8 +26,14 @@ namespace Shtannikov
         {
             try
             {
-                double x = double.Parse(XTextBox.Text);
-                double y = double.Parse(YTextBox.Text);
+                if (!double.TryParse(XTextBox.Text, out double x))
+                {
+                    MessageBox.Show("Ошибка Введено некорректное значение x!","Ошибка");
+                }
+                if (!double.TryParse(YTextBox.Text, out double y))
+                {
+                    MessageBox.Show("Ошибка Введено некорректное значение y!", "Ошибка");
+                }
 
                 Func<double, double> selectedFunction = SelectFunction();
 
