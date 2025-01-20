@@ -20,35 +20,35 @@
         <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center">
             
             <StackPanel>
-                <Label Content="x" Margin="10"/>
-                <Label Content="m" Margin="10"/>
+                <Label Content="X" Margin="10"/>
+                <Label Content="Y" Margin="10"/>
             </StackPanel>
 
             <StackPanel Margin="10">
-                <TextBox Text="TextBox" Width="120" Margin="10"/>
-                <TextBox Text="TextBox" Width="120" Margin="10"/>
+                <TextBox x:Name="XTextBox" Text="Введите x" Width="120" Margin="10"/>
+                <TextBox x:Name="YTextBox" Text="Введите y" Width="120" Margin="10"/>
             </StackPanel>
             
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Grid.Row="2">
 
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"> 
-                <RadioButton Content="x3" Margin="10"/>
-                <RadioButton Content="x3" Margin="10"/>
-                <RadioButton Content="x3" Margin="10"/>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <RadioButton x:Name="ShRadioButton" Content="sh(x)" Margin="10"/>
+                <RadioButton x:Name="SquareRadioButton" Content="x^2" Margin="10"/>
+                <RadioButton x:Name="ExpRadioButton" Content="e^x" Margin="10"/>
             </StackPanel>
 
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
-                <Button Content="Вычислить" Margin="10" Width="100"/>
-                <Button Content="Очистить" Margin="10" Width="100"/>
+                <Button Content="Вычислить" Margin="10" Width="100" Height="29" Click="CalculateButton_Click"/>
+                <Button Content="Очистить" Margin="10" Width="100" Height="29" Click="ClearButton_Click"/>
             </StackPanel>
 
         </StackPanel>
 
         <StackPanel Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
             <Label Content="Ответ" Margin="10"/>
-            <TextBox Text="0" HorizontalAlignment="Right" Width="100" Margin="10"/>
+            <TextBox x:Name="ResultTextBox" Text="0" HorizontalAlignment="Right" Width="100" Margin="10"/>
         </StackPanel>
 
     </Grid>
