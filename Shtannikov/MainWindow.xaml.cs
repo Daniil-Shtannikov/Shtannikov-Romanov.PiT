@@ -38,7 +38,6 @@ namespace Shtannikov
                 }
 
                 double result = C(x, y, selectedFunction);
-
                 ResultTextBox.Text = result.ToString("F4");
             }
             catch (Exception ex)
@@ -84,6 +83,20 @@ namespace Shtannikov
         private double Derivative(Func<double, double> f, double x, double h = 1e-5)
         {
             return (f(x + h) - f(x - h)) / (2 * h);
+        }
+
+        private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e) 
+        {
+           MessageBoxResult result = MessageBox.Show("Вы точно хотите выйти?", "Предупреждение", MessageBoxButton.YesNo);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    e.Cancel = false;
+                    break;
+                case MessageBoxResult.No:
+                    e.Cancel = true;
+                    break;
+            }  
         }
     }
 }

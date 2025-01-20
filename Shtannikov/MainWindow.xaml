@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Shtannikov"
         mc:Ignorable="d"
+        Closing="MainWindow_Closing"
         Title="MainWindow" Height="350" Width="310">
     <Grid>
 
@@ -15,7 +16,7 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         
-        <Image VerticalAlignment="Top" HorizontalAlignment="Left" Width="280" Height="80" Margin="10" Source="yr13.png"/>
+        <Image VerticalAlignment="Top" HorizontalAlignment="Left" Width="280" Height="80" Margin="10" Source="yr13.png" ToolTip="Картинка примера"/>
 
         <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center">
             
@@ -25,8 +26,8 @@
             </StackPanel>
 
             <StackPanel Margin="10">
-                <TextBox x:Name="XTextBox" Text="Введите x" Width="120" Margin="10"/>
-                <TextBox x:Name="YTextBox" Text="Введите y" Width="120" Margin="10"/>
+                <TextBox x:Name="XTextBox" Text="Введите x" Width="120" Margin="10" ToolTip="Поле значения x"/>
+                <TextBox x:Name="YTextBox" Text="Введите y" Width="120" Margin="10" ToolTip="Поле значения y"/>
             </StackPanel>
             
         </StackPanel>
@@ -34,9 +35,9 @@
         <StackPanel Orientation="Horizontal" Grid.Row="2">
 
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                <RadioButton x:Name="ShRadioButton" Content="sh(x)" Margin="10"/>
-                <RadioButton x:Name="SquareRadioButton" Content="x^2" Margin="10"/>
-                <RadioButton x:Name="ExpRadioButton" Content="e^x" Margin="10"/>
+                <RadioButton x:Name="ShRadioButton" Content="sh(x)" Margin="10" ToolTip="Гиперболический синус"/>
+                <RadioButton x:Name="SquareRadioButton" Content="x^2" Margin="10" ToolTip="Квадрат числа x"/>
+                <RadioButton x:Name="ExpRadioButton" Content="e^x" Margin="10" ToolTip="Экспонента числа x"/>
             </StackPanel>
 
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
@@ -48,8 +49,8 @@
 
         <StackPanel Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
             <Label Content="Ответ" Margin="10"/>
-            <TextBox x:Name="ResultTextBox" Text="0" HorizontalAlignment="Right" Width="100" Margin="10"/>
+            <TextBox x:Name="ResultTextBox" Text="0" HorizontalAlignment="Right" Width="100" Margin="10" IsEnabled="False"/>
         </StackPanel>
-
     </Grid>
+    
 </Window>
